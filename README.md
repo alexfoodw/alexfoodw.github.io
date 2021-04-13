@@ -1,4 +1,4 @@
-![](https://chibicode.github.io/duo/static/images/europeana-VsnDYMWollM-unsplash.jpeg)
+![](https://alexfoodw.github.io/duo/static/images/sg2im.jpeg)
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
 
