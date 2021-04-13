@@ -25,7 +25,7 @@ defaults:
     scope:
       path: ""
     values:
-      image: "static/images/europeana-VsnDYMWollM-unsplash.jpeg"
+      image: "static/images/sg2im.jpeg"
 
 # ----------------------------------------------------------------------------
 # Customize Options: Optional
