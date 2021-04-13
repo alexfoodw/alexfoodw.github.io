@@ -2,7 +2,7 @@
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
 
-Github repo with code: [alexfoodw/sg2im](https://github.com/alexfoodw/sg2im)
+Github repo with code and report: [alexfoodw/sg2im](https://github.com/alexfoodw/sg2im)
 
 ### Motivation
 Within the past decade, the computer vision community has seen astounding progress for several fundamental tasks such as image classification, object detection, instance segmentation and scene generation. However, a growing observation is that DL lacks the abstract, high-level understanding of images that humans have. This causes sub-optimal performance for vision tasks which require higher level semantic understanding of interactions between objects such as visual question answering, scene understanding and few-shot/zero-shot image classification. 
@@ -24,7 +24,20 @@ As shown in the above image, we break down the generation process into 4 main st
   3. Scene layout generation performed by a Box Regression Network on final object embeddings.
   4. Pixel refinement by a Cascaded Refinement Network to fill up the final pixels given the scene layout.
 
-For full details of the methodology, please refer to the report or the code.
+#### Scene Graph Pruning
+In this webpage, we only discuss our key project contribution - scene graph pruning using contextual knowledge. For other details of the methodology, please refer to the report or the code.
+
+Since manually annotated scene graphs are image specific, they contain many unimportant relationships which do not contribute to the overall semantic understanding of an object and its relations. This results in confusion during a model's learning phase, and unnecessarily long training times of large image databases.
+
+Concretely, consider 'sheep' as the object that our model is learning to represent and generate. Analysing the Visual Genome (VG) dataset [[5]](#5) - a knowledge base with manually annotated object relations for each image - we see that the 'sheep' object has a total of 2193 relations. Of which, only a small minority represents semantically rich information which generalizes across many images: 'sheep in field' has 1059 instances, 'sheep has leg' has 332 instances, and 'sheep eating grass' has 318 instances. 
+
+In contrast, 2041 relations have less than 10 instances for the model to learn from, of which, many are too specific to enhance the model's understanding of a 'sheep': '70 drawn on sheep', 'suv next to sheep', 'teddy bear tied to sheep', 'sheep wearing necklace', where all of which have only 1 instance.
+
+Hence, in order to enhance model learning and optimize training time of large datasets, we propose a Scene Graph Pruning algorithm which filters out such minimally contributing relations and their respective objects.
+
+Specifically, given a knowledge graph, we form a refined knowledge graph by only keeping the top _k_ relations for each object category in order of decreasing weights. From this refined knowledge graph, we can extract the key partner object categories associated to each object category. _k_ is thus a hyperparameter, which we set to `k=10`.
+
+Now, for every input scene graph, we prune any object, along with the relations that contain it, if the object category of that object is not in our refined knowledge graph. We refer readers to the report for formal definitions of the terms mentioned.
 
 ### Experiments 
 We train our model to generate 64x64 images on a restrained version of the Visual Genome [[5]](#5) dataset. In our experiments, we aim to show that our method is able to produce realistic images that respect the relations between objects, with faster training time and despite the restraining of total object categories. We train our model for a total of 30k iterations, with the model switching to evaluation mode after 3k iterations.
