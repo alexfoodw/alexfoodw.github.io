@@ -29,6 +29,7 @@ We train our model to generate 64x64 images on a restrained version of the Visua
 
 #### Qualitative Results
 <img src="https://alexfoodw.github.io/sg2im/images/qual_res_0.png" width="1200">
+<img src="https://alexfoodw.github.io/sg2im/images/qual_res_1.png" width="1200">
 In this figure above, we list 12 sample generated images, where each respective input scene graph and the corresponding generated scene layout is shown as well. The input scene graphs are taken from our test set after training the model. We observe that although the images are not as sharp as input training images, the model manages to generate realistic looking objects which respect the relationships specified in each scene graph.
 
 In particular, zooming into the bottom right image with a house on a hill (second set of images from bottom right of figure), we see that the model is impressively able to generate both large objects, like the sky and grass, and small objects like the building and hill.
@@ -53,7 +54,7 @@ Next, we observe that by pruning away the mentioned unimportant relationships, w
 #### Comparisons with Baseline
 Finally, in order to comprehensively analyze the quality of generated images of our method, we compare our trained model with our baseline comparison model taken from [[4]](#4). The key difference between the two models is the proposed scene graph pruning strategy, and the significantly faster training time as discussed in the previous section. We feed an incrementally challenging scene graph input into each model, and compare the respective outputs in the figure below.
 
-<img src="https://alexfoodw.github.io/sg2im/images/qual_res_1.png" width="1200">
+<img src="https://alexfoodw.github.io/sg2im/images/incremental_comp.png" width="1200">
 
 The analysis of this experiment is two-fold - our methods ability to handle increasingly complex inputs, and the comparison of between our method and our baseline model. Firstly, zooming in on the top row, we observe the our model is able to generate realistic images which respect each incrementally challenging scene graph. This can be seen from the images displaying relationships such as _sheep by sheep_ and _mountain behind tree_ even as the complexity of inputs increases. 
 
