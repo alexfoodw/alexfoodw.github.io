@@ -2,6 +2,8 @@
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
 
+Github repo with code: [alexfoodw/sg2im](https://github.com/alexfoodw/sg2im)
+
 ### Motivation
 Within the past decade, the computer vision community has seen astounding progress for several fundamental tasks such as image classification, object detection, instance segmentation and scene generation. However, a growing observation is that DL lacks the abstract, high-level understanding of images that humans have. This causes sub-optimal performance for vision tasks which require higher level semantic understanding of interactions between objects such as visual question answering, scene understanding and few-shot/zero-shot image classification. 
 
