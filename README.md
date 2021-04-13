@@ -1,4 +1,4 @@
-![](https://alexfoodw.github.io/static/images/sg2im.jpeg)
+<img src="https://alexfoodw.github.io/static/images/sg2im.jpeg" width="600">
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
 
