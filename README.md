@@ -1,7 +1,7 @@
 <img src="https://alexfoodw.github.io/static/images/sg2im.jpeg" width="600">
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
-
+- Alex Foo, School of Computing, NUS
 Github repo with code and report: [alexfoodw/sg2im](https://github.com/alexfoodw/sg2im)
 
 ### Motivation
@@ -13,7 +13,7 @@ As illustrated in the image below, we see that works that use object detection n
 
 ![Image of Scene Graph](https://alexfoodw.github.io/static/images/scene-graph.jpg)
 
-In this work, we propose to further combine low-level generated scene graphs with high-level contextual knowledge graphs and apply it on the task of image scene generation. We argue that annotated scene graphs contain noisy and unimportant information which may confuse the training of generative models, and hence have to be integrated with a more general or contextual level of understanding of objects and their key interactions in order to optimize training and accurately fabricate a scene. 
+In this work, we propose to further combine low-level generated scene graphs with high-level contextual knowledge graphs and apply it on the task of image scene generation. We argue that annotated scene graphs contain noisy and unimportant information which may confuse the training of generative models, and hence have to be integrated with a more general or contextual level of understanding of objects and their key interactions in order to optimize training and accurately fabricate a scene. No work till date has explored combining scene and knowledge graphs for the enhancement of image scene generation
 
 ### Methodology
 <img src="https://alexfoodw.github.io/static/images/proposed_method.png" width="1200">
