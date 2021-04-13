@@ -1,7 +1,8 @@
 <img src="https://alexfoodw.github.io/static/images/sg2im.jpeg" width="600">
 
 ## Image Generation from Scene Graphs with Contextual Knowledge
-- Alex Foo, School of Computing, NUS
+\- _Alex Foo, School of Computing, NUS_
+
 Github repo with code and report: [alexfoodw/sg2im](https://github.com/alexfoodw/sg2im)
 
 ### Motivation
